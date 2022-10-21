@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 function App() {
 
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
-  const show = useSelector(state => state.showCounter);
+  const counter = useSelector(state => state.counter);
+  const show = useSelector((state) => state.showCounter);
 
   const incrementHandler = () => {
 
@@ -14,9 +14,16 @@ function App() {
 
   };
 
+  const increaseHandler = () => {
+
+    dispatch({ type: 'increase' , amount: 10 });
+
+  };
+
+
   const decrementHandler = () => {
 
-    dispatch({ type: 'increment' });
+    dispatch({ type: 'decrement' });
 
 
   };
@@ -35,7 +42,9 @@ function App() {
 
         <button onClick={incrementHandler}> Increment</button>
         <button onClick={decrementHandler}>Decrement</button>
-        <button onClick={() => { dispatch({ type: "plusFive", payload: 5 }); }} style={{margin:10}}>plusFive</button>
+        <button onClick={increaseHandler}>Increase by 10</button>
+
+        {/* <button onClick={() => { dispatch({ type: "plusFive", payload: 5 }); }} style={{margin:10}}>plusFive</button> */}
       {/* <button onClick={() => { dispatch({ type: "minusFive", payload: 5 }); }} style={{margin:10}}>minusFive</button> */}
  
         <div>

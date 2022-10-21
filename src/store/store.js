@@ -1,12 +1,14 @@
 import { createStore } from 'redux';
 
+
 const initialState = { counter: 0, showCounter: true };
 
 const counterReducer = (state = initialState, action) => {
     if (action.type === 'increment') {
+
         return {
-            counter: state.counter + 1,
-            showCounter: state.showCounter
+            counter: state.counter + 1 ,
+            showCounter: state.showCounter,
          };
     }
 
@@ -25,9 +27,9 @@ const counterReducer = (state = initialState, action) => {
 
         };
     }
-    else if (action.type === 'plusFive') {
-        return { counter: state.counter + action.payload }
-    }
+    // else if (action.type === 'plusFive') {
+    //     return { counter: state.counter + action.payload }
+    // }
     // else if (action.type === 'minusFive') {
     //     return { counter: state.counter - action.payload }
     // }
